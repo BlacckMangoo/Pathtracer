@@ -16,9 +16,7 @@ struct Vec3 {
     constexpr Vec3() noexcept = default;
     constexpr Vec3(T x, T y, T z) noexcept : x(x), y(y), z(z) {}
     explicit constexpr Vec3(T v) noexcept : x(v), y(v), z(v) {}
-
     constexpr Vec3 operator-() const noexcept { return {-x, -y, -z}; }
-
     constexpr Vec3 operator+(const Vec3& other) const noexcept {
         return {x + other.x, y + other.y, z + other.z};
     }
@@ -90,6 +88,7 @@ inline std::optional<std::pair<T,T>> findRootsOfQuadratic(T a, T b, T c) {
 
     static_assert(std::is_floating_point_v<T>, "findRootsOfQuadratic requires a floating-point type");
     const T eps = std::numeric_limits<T>::epsilon();
+    // check if its basically just linear equation
     if (std::abs(a) <= eps) {
         if (std::abs(b) <= eps) {
             return std::nullopt;
@@ -97,6 +96,7 @@ inline std::optional<std::pair<T,T>> findRootsOfQuadratic(T a, T b, T c) {
         T t = -c / b;
         return std::make_pair(t, t);
     }
+
     const T discriminant = b * b - static_cast<T>(4) * a * c;
     if (discriminant < static_cast<T>(0)) {
         return std::nullopt;

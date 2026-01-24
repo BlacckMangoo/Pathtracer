@@ -8,6 +8,10 @@ struct Color {
     Color operator+(const Color& c) const {
         return { r + c.r, g + c.g, b + c.b };
     }
+    Color& operator+=(const Color& c) {
+        r += c.r; g += c.g; b += c.b;
+        return *this;
+    }
 
     Color operator*(const float s) const {
         return { r * s, g * s, b * s };
@@ -16,19 +20,13 @@ struct Color {
     Color operator*(const Color& c) const {
         return { r * c.r, g * c.g, b * c.b };
     }
-
-    Color operator/(float s) const {
-        return { r / s, g / s, b / s };
-    }
-
-    Color& operator+=(const Color& c) {
-        r += c.r; g += c.g; b += c.b;
-        return *this;
-    }
-
     Color& operator*=(float s) {
         r *= s; g *= s; b *= s;
         return *this;
+    }
+
+    Color operator/(float s) const {
+        return { r / s, g / s, b / s };
     }
 
     Color& operator/=(float s) {
