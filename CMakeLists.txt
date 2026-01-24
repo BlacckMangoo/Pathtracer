@@ -4,10 +4,8 @@ project(PathTracer)
 set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-#add other cpp files as needed
-
 add_library(core
-ppm.cpp primitives.cpp )
+ppm.cpp primitives.cpp objLoader.cpp)
 
 add_executable(PathTracer main.cpp  )
 

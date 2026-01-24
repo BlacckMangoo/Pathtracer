@@ -107,3 +107,5 @@ inline std::optional<std::pair<T,T>> findRootsOfQuadratic(T a, T b, T c) {
     T t2 = (-b + sqrtDisc) / (static_cast<T>(2) * a);
     return std::make_pair(t1, t2);
 }
+
+

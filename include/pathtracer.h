@@ -25,33 +25,27 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
             result.material = s.material;
         }
     }
-    for (const Triangle& tri : scene.triangles) {
-        if (HitInfo hit; tri.triHit(ray, hit) && hit.t < result.t) {
-            result.hit = true;
-            result.t = hit.t;
-            result.hitPoint = ray.origin + hit.t * ray.direction;
-            result.normal = hit.normal;
-            result.material = tri.material;
+
+    for (const Mesh& mesh : scene.meshes) {
+        for (const auto& triangle : mesh.triangles) {
+            if (HitInfo hit; triangle.triHit(ray, hit) && hit.t < result.t) {
+                result.hit = true;
+                result.t = hit.t;
+                result.hitPoint = ray.origin + hit.t * ray.direction;
+                result.normal = hit.normal;
+                result.material = mesh.material;
+            }
         }
     }
     return result;
 }
 
 inline Color trace(const Ray& ray, const SceneData& scene , const int depth) {
-    if (depth >= scene.maxReflectionDepth) {return Colors::skyBlue;}
     const SceneHitInfo hit = traceScene(ray,scene);
     if (!hit.hit) {return Colors::skyBlue;}
-    const float diffuseIntensity = std::max(0.0f, hit.normal.dot(scene.lightDir));
+    const float diffuseIntensity = std::max(0.0f, hit.normal.dot(-scene.lightDir));
     constexpr  float ambient = 0.1f;
     const Color directColor = hit.material.baseColor * (ambient + (1.0f - ambient) * diffuseIntensity);
-    if (const float reflectivity = hit.material.reflectivity; reflectivity > 0.0f) {
-        Vec3<float> reflectDir = ray.direction - 2.0f * ray.direction.dot(hit.normal) * hit.normal;
-        reflectDir = reflectDir.normalized();
-        const Ray reflectRay{ hit.hitPoint + hit.normal * 0.001f, reflectDir };
-        const Color reflectColor = trace(reflectRay, scene, depth + 1);
-        // Blend direct color and reflection
-        return directColor * (1.0f - reflectivity) + reflectColor * reflectivity;
-    }
 
     return directColor;
 }

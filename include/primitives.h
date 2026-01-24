@@ -2,6 +2,7 @@
 #include <ray.h>
 #include <material.h>
 #include <camera.h>
+#include <vector>
 
 
 struct HitInfo {
@@ -22,23 +23,32 @@ struct Sphere {
 };
 
 
+
+
 struct Triangle {
     Triangle (const Vec3<float>& vertex0,
              const Vec3<float>& vertex1,
-             const Vec3<float>& vertex2,const Material& mat)
-        : material(mat), v0(vertex0), v1(vertex1) , v2(vertex2) {
-        n0 = (v1 - v0).cross(v2 - v0).normalized();
-        n1 = n0;
-        n2 = n0;
+             const Vec3<float>& vertex2)
+        :  v0(vertex0), v1(vertex1) , v2(vertex2) {
     };
 
     bool triHit(const Ray &ray, HitInfo& hitInfo) const;
-    Material material{};
 
 private:
-    Vec3<float> n0, n1, n2;
     Vec3<float> v0{};
     Vec3<float> v1{};
     Vec3<float> v2{};
 };
 
+
+struct Mesh {
+    Mesh() = default;
+    Mesh( std::vector<Vec3<float>> vertices, const Material& material )
+        : material(material) {
+        for (size_t i = 0; i + 2 < vertices.size(); i += 3) {
+            triangles.emplace_back(vertices[i], vertices[i + 1], vertices[i + 2]);
+        }
+    }
+    std::vector<Triangle> triangles{};
+    Material material{};
+};

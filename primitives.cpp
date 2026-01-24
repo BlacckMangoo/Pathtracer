@@ -24,39 +24,44 @@ bool Sphere::hit(const Ray& ray, float& t) const {
     return false;
 }
 
-bool Triangle::triHit(const Ray &ray, HitInfo& hitInfo) const {
-
-    constexpr float EPS = 1e-8f;
+bool Triangle::triHit(const Ray& ray, HitInfo& hitInfo) const {
+    constexpr float EPS = 1e-6f;
 
     const Vec3<float> edge1 = v1 - v0;
-    const Vec3<float> edge2 = v2 - v0;
-    const Vec3<float> h = ray.direction.cross(edge2);
-    const float a = edge1.dot(h); // determinant which comes in denominator in cramer rules expressions
+    Vec3<float> edge2 = v2 - v0;
 
-    if (std::abs(a) < EPS)
-        return false; // parallel
+    Vec3<float> pvec = ray.direction.cross(edge2);
+    float det = edge1.dot(pvec);
 
-    const float f = 1.0f / a;
-    const Vec3<float> s = ray.origin - v0;
-
-    hitInfo.u = f * s.dot(h);
-
-    const Vec3<float> q = s.cross(edge1);
-    hitInfo.v = f * ray.direction.dot(q);
-    if (hitInfo.v < 0.0f || hitInfo.u + hitInfo.v> 1.0f)
+    // Ray parallel to triangle
+    if (std::abs(det) < EPS)
         return false;
 
-    hitInfo.t = f * edge2.dot(q);
-    if (hitInfo.t <= EPS)
+    float invDet = 1.0f / det;
+
+    Vec3<float> tvec = ray.origin - v0;
+    float u = tvec.dot(pvec) * invDet;
+    if (u < 0.0f || u > 1.0f)
         return false;
 
-    if (hitInfo.u < 0.0f || hitInfo.v > 1.0f)
+    Vec3<float> qvec = tvec.cross(edge1);
+    float v = ray.direction.dot(qvec) * invDet;
+    if (v < 0.0f || u + v > 1.0f)
         return false;
-    // smooth shading normals
-    const float w = 1.0f - hitInfo.u - hitInfo.v;
-    hitInfo.normal = (n0 * w + n1 * hitInfo.u + n2 * hitInfo.v).normalized();
+
+    float t = edge2.dot(qvec) * invDet;
+    if (t <= EPS)
+        return false;
+
+    // Write hit info only after success
+    hitInfo.t = t;
+    hitInfo.u = u;
+    hitInfo.v = v;
+
+    hitInfo.normal = edge1.cross(edge2).normalized();
+
     if (hitInfo.normal.dot(ray.direction) > 0.0f)
-    hitInfo.normal = -hitInfo.normal;
+        hitInfo.normal = -hitInfo.normal;
 
     return true;
 }
