@@ -18,6 +18,10 @@ ObjLoader::ObjLoader(const std::filesystem::path& objFilePath) {
     if (!err.empty()) {
         std::cerr << "OBJ error: " << err << '\n';
     }
+
+    if (!loaded) {
+        std::cerr << "Failed to load OBJ file: " << objFilePath << '\n';
+    }
 }
 
 Mesh ObjLoader::LoadMesh(const Material& material) const {
@@ -68,6 +72,8 @@ Mesh ObjLoader::LoadMesh(const Material& material) const {
             indexOffset += 3;
         }
     }
-
     return mesh;
+
+
+
 }
