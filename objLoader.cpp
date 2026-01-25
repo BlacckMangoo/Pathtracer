@@ -32,7 +32,7 @@ Mesh ObjLoader::LoadMesh(const Material& material) const {
         return mesh;
     }
 
-    // 1. Load vertex positions
+    //  Load vertex positions
     std::vector<Vec3<float>> positions;
     positions.reserve(attrib.vertices.size() / 3);
 
@@ -51,7 +51,7 @@ Mesh ObjLoader::LoadMesh(const Material& material) const {
         for (size_t f = 0; f < shape.mesh.num_face_vertices.size(); ++f) {
             int fv = shape.mesh.num_face_vertices[f];
 
-            // Only triangles supported
+            // if not triangle, skip
             if (fv != 3) {
                 indexOffset += fv;
                 continue;

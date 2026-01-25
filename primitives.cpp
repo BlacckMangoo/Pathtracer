@@ -60,8 +60,8 @@ bool Triangle::triHit(const Ray& ray, HitInfo& hitInfo) const {
 
     hitInfo.normal = edge1.cross(edge2).normalized();
 
-    if (hitInfo.normal.dot(ray.direction) > 0.0f)
-        hitInfo.normal = -hitInfo.normal;
-
+    if ( hitInfo.normal.dot(ray.direction) > 0 ) {
+        hitInfo.normal = -hitInfo.normal; // ensure normal faces against ray
+    }
     return true;
 }

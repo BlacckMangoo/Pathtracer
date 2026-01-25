@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 add_library(core
-ppm.cpp primitives.cpp objLoader.cpp)
+ppm.cpp primitives.cpp objLoader.cpp pathtracer.cpp)
 
 add_executable(PathTracer main.cpp  )
 
