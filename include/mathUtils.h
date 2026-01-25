@@ -5,7 +5,6 @@
 #include <utility>
 #include <type_traits>
 #include <limits>
-#include <cassert>
 
 template <typename T>
 struct Vec3 {
@@ -53,7 +52,7 @@ struct Vec3 {
         return x * other.x + y * other.y + z * other.z;
     }
     [[nodiscard]] constexpr Vec3<T> cross(const Vec3& other) const noexcept {
-        return {
+       return {
             y * other.z - z * other.y,
             z * other.x - x * other.z,
             x * other.y - y * other.x
@@ -64,6 +63,7 @@ struct Vec3 {
         using std::sqrt;
         return static_cast<T>(sqrt(static_cast<long double>(x * x + y * y + z * z)));
     }
+
     [[nodiscard]] Vec3 normalized() const noexcept {
         const T len = length();
         const T eps = std::numeric_limits<T>::epsilon();
@@ -75,6 +75,7 @@ struct Vec3 {
 
     constexpr bool operator==(const Vec3& other) const noexcept {
         return x == other.x && y == other.y && z == other.z;
+
     }
     constexpr bool operator!=(const Vec3& other) const noexcept { return !(*this == other); }
 

@@ -1,49 +1,13 @@
 #pragma once
-#include <algorithm>
-
 struct Color {
     float r{0.0f};
     float g{0.0f};
     float b{0.0f};
-    Color operator+(const Color& c) const {
-        return { r + c.r, g + c.g, b + c.b };
-    }
-    Color& operator+=(const Color& c) {
-        r += c.r; g += c.g; b += c.b;
-        return *this;
-    }
 
     Color operator*(const float s) const {
         return { r * s, g * s, b * s };
     }
-
-    Color operator*(const Color& c) const {
-        return { r * c.r, g * c.g, b * c.b };
-    }
-    Color& operator*=(float s) {
-        r *= s; g *= s; b *= s;
-        return *this;
-    }
-
-    Color operator/(float s) const {
-        return { r / s, g / s, b / s };
-    }
-
-    Color& operator/=(float s) {
-        r /= s; g /= s; b /= s;
-        return *this;
-    }
-
-    void clamp(float min = 0.0f, float max = 1.0f) {
-        r = std::clamp(r, min, max);
-        g = std::clamp(g, min, max);
-        b = std::clamp(b, min, max);
-    }
 };
-
-inline Color operator*(float s, const Color& c) {
-    return c * s;
-}
 
 
 namespace Colors {
