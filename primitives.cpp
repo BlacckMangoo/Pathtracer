@@ -25,7 +25,7 @@ bool Sphere::hit(const Ray& ray, float& t) const {
 }
 
 bool Triangle::triHit(const Ray& ray, HitInfo& hitInfo) const {
-    constexpr float EPS = 1e-6f;
+    constexpr float EPS = 1e-4f;
 
     const Vec3<float> edge1 = v1 - v0;
     Vec3<float> edge2 = v2 - v0;

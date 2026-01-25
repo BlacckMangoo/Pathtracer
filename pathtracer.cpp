@@ -1,4 +1,8 @@
 #include <pathtracer.h>
+#include <cmath>
+
+constexpr float EPSILON = 1e-4f;
+
 
 inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
     SceneHitInfo result{};
@@ -19,7 +23,7 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
                 result.hit = true;
                 result.t = hit.t;
                 result.hitPoint = ray.origin + hit.t * ray.direction;
-                result.normal = hit.normal;
+                result.normal = hit.normal.normalized();
                 result.material = mesh.material;
             }
         }
@@ -27,10 +31,12 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
     return result;
 }
 
- Color trace(const Ray& ray, const SceneData& scene) {
+Color trace(const Ray& ray, const SceneData& scene) {
     const SceneHitInfo hit = traceScene(ray,scene);
     if (!hit.hit) {return Colors::skyBlue;}
-    const float diffuseIntensity = std::max(0.0f, hit.normal.dot(scene.lightDir));
+    const Vec3<float> n = hit.normal.normalized();
+    const Vec3<float> l = scene.lightDir.normalized();
+    const float diffuseIntensity = std::max(0.0f, n.dot(l));
     constexpr  float ambient = 0.3f;
     const Color directColor = hit.material.baseColor * (ambient + ((1.0f - ambient) * diffuseIntensity));
 

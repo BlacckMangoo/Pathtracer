@@ -23,15 +23,6 @@ PPMFile::PPMFile(std::filesystem::path filePath,uint16_t maxColorVal,uint16_t wi
     m_stream.swap(file);
 }
 
-void PPMFile::writeHeader(const uint16_t& width,
-                          const uint16_t& height,
-                          const uint16_t& maxColorValue)
-{
-    m_stream << "P6\n";
-    m_stream << width << " " << height << "\n";
-    m_stream << maxColorValue << "\n";
-}
-
 void PPMFile::writePixel(const Color& color) {
     unsigned char pixel[3] = {
         static_cast<unsigned char>(color.r),
