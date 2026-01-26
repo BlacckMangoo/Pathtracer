@@ -17,18 +17,6 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
         }
     }
 
-    for (const Mesh& mesh : scene.meshes) {
-        for (const auto& triangle : mesh.triangles) {
-            if (HitInfo hit; triangle.triHit(ray, hit) && hit.t < result.t) {
-                result.hit = true;
-                result.t = hit.t;
-                result.hitPoint = ray.origin + hit.t * ray.direction;
-                result.normal = hit.normal.normalized();
-                result.material = mesh.material;
-            }
-        }
-    }
-
     for ( const auto& triangle : scene.teapotModelData ) {
         if (HitInfo hit; triangle.triHit(ray, hit) && hit.t < result.t) {
             result.hit = true;

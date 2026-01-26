@@ -6,7 +6,7 @@
 
 int main() {
     Profiler profiler ;
-    PPMFile ppm("./assets/output.ppm", 255, 100, 100);
+    PPMFile ppm("./assets/output.ppm", 255, 1000, 1000);
     Camera camera{ ppm.getWidth(), ppm.getHeight(),3.0f };
     SceneData scene;
     for (int y = 0; y < ppm.getHeight(); ++y) {
