@@ -2,7 +2,7 @@
 #include <mathUtils.h>
 
 struct Camera {
-    const Vec3<float> origin{0, 0.0, 20.0f};
+    const Vec3<float> origin{0, 0.0, 15.0f};
     int  width ;
     int  height ;
     float focalLength{1.0f}; // this is basically the modulus of distance of image plane from camera origin

@@ -55,8 +55,7 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
 
 Color trace(const Ray& ray, const SceneData& scene, int depth = 0)
 {
-    if (depth > 0)
-        return Colors::skyBlue;
+    if (depth > 3) return Colors::skyBlue;
 
     const SceneHitInfo hit = traceScene(ray, scene);
     if (!hit.hit)

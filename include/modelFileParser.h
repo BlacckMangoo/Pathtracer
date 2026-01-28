@@ -26,7 +26,6 @@ struct Mesh {
 
 // each 3 lines define a triangle
 
-
 class ModelFileParser {
 public:
     explicit ModelFileParser( const std::filesystem::path& modelFilePath , Mesh& mesh );

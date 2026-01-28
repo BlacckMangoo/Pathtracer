@@ -38,7 +38,6 @@ struct Triangle {
     Vec3<float> centroid{};
     AABB_box box ;
 
-private:
     Vec3<float> v0{};
     Vec3<float> v1{};
     Vec3<float> v2{};

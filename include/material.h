@@ -6,7 +6,8 @@ struct Material {
 };
 
 namespace  Materials {
-    constexpr Material gold = {.baseColor = Colors::yellow,.reflectance = 0.5f};
+    constexpr Material gold = {.baseColor = Colors::yellow,.reflectance = 0.2f};
     constexpr Material glass = {.baseColor = Colors::cyan,.reflectance = 0.7f};
+    constexpr Material ceramic = {.baseColor = Colors::white,.reflectance = 0.8f};
 }
 

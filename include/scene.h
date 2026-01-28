@@ -3,7 +3,7 @@
 #include <primitives.h>
 #include "modelFileParser.h"
 #include <bvh.h>
-
+#include <objLoader.h>
 
 
 struct SceneData {
@@ -13,6 +13,9 @@ struct SceneData {
 
     SceneData() {
         meshes.reserve(3);
-        ModelFileParser parser("./assets/models/teapot.mdl", meshes.emplace_back());
+        Mesh utahTeapotModel{};
+        utahTeapotModel.modelData = ObjLoader("./assets/models/utah_teapot.obj").LoadMesh();
+        utahTeapotModel.BuildNodeBVH();
+        meshes.emplace_back(utahTeapotModel);
     }
 };

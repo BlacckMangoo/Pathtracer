@@ -4,6 +4,7 @@
 #include <algorithm>
 // TO be used for building BVH in future
 
+constexpr int MAX_TRIANGLES_PER_LEAF = 20;
 
 enum class SplitAxis {
     X_AXIS = 1,
@@ -23,7 +24,7 @@ struct BVHNode {
 struct BVH {
     int rootIndex = -1;
     std::vector<BVHNode> nodes{};
-    int maxTrianglesPerLeaf{8};
+    int maxTrianglesPerLeaf{MAX_TRIANGLES_PER_LEAF};
     int BuildBVH(int startIndex, int end, std::vector<Triangle> &triangles);
 };
 

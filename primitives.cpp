@@ -5,7 +5,7 @@ int countNoOfSphereIntersectionChecks = 0;
 
 
 // will be read like if( sphere.hit( ray, t ) ) in main
-bool Sphere::hit(const Ray& ray, float& t) const {
+bool Sphere::hit(const Ray &ray, float &t) const {
     countNoOfSphereIntersectionChecks++;
     const Vec3<float> oc = ray.origin - center;
     const float a = ray.direction.dot(ray.direction);
@@ -29,7 +29,7 @@ bool Sphere::hit(const Ray& ray, float& t) const {
     return false;
 }
 
-bool Triangle::triHit(const Ray& ray, HitInfo& hitInfo) const {
+bool Triangle::triHit(const Ray &ray, HitInfo &hitInfo) const {
     countNoOfTriangleIntersectionChecks++;
 
     constexpr float EPS = 1e-4f;
@@ -66,11 +66,8 @@ bool Triangle::triHit(const Ray& ray, HitInfo& hitInfo) const {
 
     hitInfo.normal = edge1.cross(edge2).normalized();
 
-    if ( hitInfo.normal.dot(ray.direction) > 0 ) {
+    if (hitInfo.normal.dot(ray.direction) > 0) {
         hitInfo.normal = -hitInfo.normal; // ensure normal faces against ray
     }
     return true;
 }
-
-
-
