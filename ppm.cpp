@@ -32,10 +32,5 @@ void PPMFile::writePixel(const Color& color) {
     m_stream.write(reinterpret_cast<char*>(pixel), 3);
 }
 
-int  PPMFile::getWidth() const {
-    return m_width;
-}
-
-int  PPMFile::getHeight() const {
-    return m_height;
-}
+int  PPMFile::getWidth() const {return m_width;}
+int  PPMFile::getHeight() const {return m_height;}

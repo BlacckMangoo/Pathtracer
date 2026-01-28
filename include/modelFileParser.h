@@ -6,6 +6,15 @@
 #include <primitives.h>
 #include <bvh.h>
 
+struct Mesh {
+    std::vector<Triangle> modelData = {};
+    BVH bvh{};
+    void BuildNodeBVH() {
+        if (modelData.empty()) std::cerr << "BuildNodeBVH failed: no model data" << std::endl;
+        bvh.rootIndex = bvh.BuildBVH( 0, static_cast<int>(modelData.size()), modelData );
+    }
+};
+
 // file format
 
 // LINE 1  -> number of triangles (uint16_t)

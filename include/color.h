@@ -3,10 +3,8 @@ struct Color {
     float r{0.0f};
     float g{0.0f};
     float b{0.0f};
-
-    Color operator*(const float s) const {
-        return { r * s, g * s, b * s };
-    }
+    Color operator*(const float s) const {return { r * s, g * s, b * s };}
+    Color operator+(const Color& other) const {return { r + other.r, g + other.g, b + other.b };}
 };
 
 

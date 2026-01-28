@@ -16,41 +16,22 @@ struct Vec3 {
     constexpr Vec3(T x, T y, T z) noexcept : x(x), y(y), z(z) {}
     explicit constexpr Vec3(T v) noexcept : x(v), y(v), z(v) {}
     constexpr Vec3 operator-() const noexcept { return {-x, -y, -z}; }
-    constexpr Vec3 operator+(const Vec3& other) const noexcept {
-        return {x + other.x, y + other.y, z + other.z};
-    }
-    constexpr Vec3& operator+=(const Vec3& other) noexcept {
-        x += other.x; y += other.y; z += other.z; return *this;
-    }
-
-    constexpr Vec3 operator-(const Vec3& other) const noexcept {
-        return {x - other.x, y - other.y, z - other.z};
-    }
-    constexpr Vec3& operator-=(const Vec3& other) noexcept {
-        x -= other.x; y -= other.y; z -= other.z; return *this;
-    }
-
-    constexpr Vec3 operator*(T scalar) const noexcept {
-        return {x * scalar, y * scalar, z * scalar};
-    }
-    friend constexpr Vec3 operator*(T scalar, const Vec3& v) noexcept {
-        return {v.x * scalar, v.y * scalar, v.z * scalar};
-    }
-    constexpr Vec3& operator*=(T scalar) noexcept { x *= scalar; y *= scalar; z *= scalar; return *this; }
-
-    constexpr Vec3 operator/(T scalar) const noexcept {
-        return {x / scalar, y / scalar, z / scalar};
-    }
-    constexpr Vec3& operator/=(T scalar) noexcept { x /= scalar; y /= scalar; z /= scalar; return *this; }
-
+    constexpr Vec3 operator+(const Vec3& other) const noexcept {return {x + other.x, y + other.y, z + other.z};}
+    constexpr Vec3& operator+=(const Vec3& other) noexcept {x += other.x; y += other.y; z += other.z; return *this;}
+    constexpr Vec3 operator-(const Vec3& other) const noexcept {return {x - other.x, y - other.y, z - other.z};}
+    constexpr Vec3& operator-=(const Vec3& other) noexcept {x -= other.x; y -= other.y; z -= other.z; return *this;}
+    constexpr Vec3 operator*(T scalar) const noexcept      {return {x * scalar, y * scalar, z * scalar};}
+    friend constexpr Vec3 operator*(T scalar, const Vec3& v) noexcept {return {v.x * scalar, v.y * scalar, v.z * scalar};}
+    constexpr Vec3& operator*=(T scalar) noexcept     { x *= scalar; y *= scalar; z *= scalar; return *this; }
+    constexpr Vec3 operator/(T scalar) const noexcept {return {x / scalar, y / scalar, z / scalar};}
+    constexpr Vec3& operator/=(T scalar) noexcept     { x /= scalar; y /= scalar; z /= scalar; return *this; }
+    constexpr bool operator==(const Vec3& other) const noexcept {return x == other.x && y == other.y && z == other.z;}
+    constexpr bool operator!=(const Vec3& other) const noexcept { return !(*this == other); }
     friend std::ostream& operator<<(std::ostream& os, const Vec3& vec) {
         os << "Vec3(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
         return os;
     }
-
-    [[nodiscard]] constexpr T dot(const Vec3& other) const noexcept {
-        return x * other.x + y * other.y + z * other.z;
-    }
+    [[nodiscard]] constexpr T dot(const Vec3& other) const noexcept {return x * other.x + y * other.y + z * other.z;}
     [[nodiscard]] constexpr Vec3<T> cross(const Vec3& other) const noexcept {
        return {
             y * other.z - z * other.y,
@@ -58,12 +39,10 @@ struct Vec3 {
             x * other.y - y * other.x
         };
     }
-
     [[nodiscard]] T length() const noexcept {
         using std::sqrt;
         return static_cast<T>(sqrt(static_cast<long double>(x * x + y * y + z * z)));
     }
-
     [[nodiscard]] Vec3 normalized() const noexcept {
         const T len = length();
         const T eps = std::numeric_limits<T>::epsilon();
@@ -72,13 +51,6 @@ struct Vec3 {
         }
         return *this / len;
     }
-
-    constexpr bool operator==(const Vec3& other) const noexcept {
-        return x == other.x && y == other.y && z == other.z;
-
-    }
-    constexpr bool operator!=(const Vec3& other) const noexcept { return !(*this == other); }
-
 };
 
 //quadratic Ax^2 + Bx + C = 0

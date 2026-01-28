@@ -2,6 +2,8 @@
 #include <vector>
 #include <primitives.h>
 #include "modelFileParser.h"
+#include <bvh.h>
+
 
 
 struct SceneData {
@@ -10,7 +12,7 @@ struct SceneData {
     Vec3<float> lightDir = {-0.3f, -0.5f, 1.0f};
 
     SceneData() {
-        meshes.reserve(10);
+        meshes.reserve(3);
         ModelFileParser parser("./assets/models/teapot.mdl", meshes.emplace_back());
     }
 };

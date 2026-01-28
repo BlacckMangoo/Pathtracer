@@ -11,11 +11,8 @@ public:
     Profiler() {
         startTime = steady_clock::now();
     }
-
     ~Profiler() {
         endTime = steady_clock::now();
         std::cout << "ElapsedTime:" << duration_cast<milliseconds>(endTime - startTime).count();
     }
-
-
 };

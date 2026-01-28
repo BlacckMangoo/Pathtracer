@@ -2,13 +2,15 @@
 #include <ray.h>
 #include <material.h>
 #include <camera.h>
+#include <iomanip>
 #include <vector>
-#include <bvh.h>
 
 extern int countNoOfTriangleIntersectionChecks;
 extern int countNoOfSphereIntersectionChecks;
-extern int countNoOfBoxIntersectionChecks;
-
+struct AABB_box {
+    Vec3<float> min{std::numeric_limits<float>::max()};
+    Vec3<float> max{std::numeric_limits<float>::min()};
+};
 struct HitInfo {
     float t{};
     float u{}, v{}; // for barycentric coordinates unused for sphere
@@ -17,13 +19,10 @@ struct HitInfo {
 
 
 struct Sphere {
-    Sphere(const float r, const Vec3<float> &c, const Material &material) : radius(r), center(c), material(material) {
-    }
-
+    Sphere(const float r, const Vec3<float> &c, const Material &material) : radius(r), center(c), material(material){}
     float radius{};
     Vec3<float> center;
     Material material{};
-
     bool hit(const Ray &ray, float &t) const;
 };
 
@@ -34,8 +33,10 @@ struct Triangle {
              const Vec3<float> &vertex2)
         : v0(vertex0), v1(vertex1), v2(vertex2) {
     };
-
+    Triangle () = default;
     bool triHit(const Ray &ray, HitInfo &hitInfo) const;
+    Vec3<float> centroid{};
+    AABB_box box ;
 
 private:
     Vec3<float> v0{};
@@ -43,10 +44,3 @@ private:
     Vec3<float> v2{};
 };
 
-struct Mesh {
-    size_t noOfTriangles{};
-    std::vector<Triangle> modelData = {};
-    BVHNode bvhNode = {};
-
-     bool hitAABB (const Ray &ray, float tMin, float &tMax) const;
-};
