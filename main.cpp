@@ -6,17 +6,12 @@
 #include <random>
 
 
-float RandomFloat() {
-    static std::mt19937 generator(std::random_device{}());
-    static std::uniform_real_distribution<float> distribution(0.0f, 1.0f);
-    return distribution(generator);
-}
 
-constexpr int Samples = 10 ;
+constexpr int Samples = 1 ;
 int main() {
     Profiler profiler ;
 
-    PPMFile ppm("./assets/output.ppm", 255, 1000, 1000);
+    PPMFile ppm("./assets/output.ppm", 255, 400, 400);
     Camera camera{ ppm.getWidth(), ppm.getHeight(),3.0f };
     SceneData scene;
 

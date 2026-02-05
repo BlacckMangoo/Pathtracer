@@ -5,7 +5,7 @@
 #include <utility>
 #include <type_traits>
 #include <limits>
-
+#include <random>
 template<typename T>
 struct Vec3 {
     static_assert(std::is_floating_point_v<T>, "Vec3 should be used with a floating-point type");
@@ -41,6 +41,9 @@ struct Vec3 {
     }
 
     constexpr Vec3 operator*(T scalar) const noexcept { return {x * scalar, y * scalar, z * scalar}; }
+
+    // Element-wise vector multiplication (Hadamard product)
+    constexpr Vec3 operator*(const Vec3& other) const noexcept { return {x * other.x, y * other.y, z * other.z}; }
 
     friend constexpr Vec3 operator*(T scalar, const Vec3 &v) noexcept {
         return {v.x * scalar, v.y * scalar, v.z * scalar};
@@ -120,4 +123,10 @@ inline std::optional<std::pair<T, T> > findRootsOfQuadratic(T a, T b, T c) {
     T t1 = (-b - sqrtDisc) / (static_cast<T>(2) * a);
     T t2 = (-b + sqrtDisc) / (static_cast<T>(2) * a);
     return std::make_pair(t1, t2);
+}
+
+inline float RandomFloat() {
+    static std::mt19937 generator(std::random_device{}());
+    static std::uniform_real_distribution<float> distribution(0.0f, 1.0f);
+    return distribution(generator);
 }
