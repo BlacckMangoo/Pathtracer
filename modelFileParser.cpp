@@ -1,17 +1,17 @@
 #include "modelFileParser.h"
 
 
-ModelFileParser::ModelFileParser(const std::filesystem::path &modelFilePath, Mesh &mesh) {
+
+
+Mesh ModelFileParser::createMesh( const std::filesystem::path& modelFilePath ) {
+    Mesh mesh;
+    std::ifstream ifStream;
+    size_t m_noOfTriangles {};
+
     ifStream = std::ifstream(modelFilePath,std::ios::in);
     if (!ifStream.is_open()) {
         throw std::runtime_error("Failed to open model file: " + modelFilePath.string());
     }
-    ConstructMeshFromFile( mesh);
-}
-
-void ModelFileParser::ConstructMeshFromFile(Mesh &mesh) {
-    // construct bounding volume
-    // read number of triangles
     ifStream >> m_noOfTriangles;
     mesh.modelData.reserve(m_noOfTriangles);
 
@@ -73,5 +73,8 @@ void ModelFileParser::ConstructMeshFromFile(Mesh &mesh) {
         mesh.modelData.emplace_back(tri) ;
     }
     mesh.BuildNodeBVH();
+    return mesh;
 }
+
+
 

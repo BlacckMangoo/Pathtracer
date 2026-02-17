@@ -13,4 +13,5 @@ struct SceneHitInfo {
 };
 
 inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene);
-Color trace(const Ray& ray, const SceneData& scene , int depth ) ;
+Color rayTrace(const Ray& ray, const SceneData& scene , int depth ) ;
+Color pathTrace(const Ray& ray, const SceneData& scene  ) ;

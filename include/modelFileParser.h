@@ -28,10 +28,20 @@ struct Mesh {
 
 class ModelFileParser {
 public:
-    explicit ModelFileParser( const std::filesystem::path& modelFilePath , Mesh& mesh );
-    size_t m_noOfTriangles {};
-    std::ifstream ifStream;
+
+    static ModelFileParser& getInstance() {
+        static ModelFileParser instance;
+        return instance;
+    }
+
+    ModelFileParser(const ModelFileParser&) = delete;
+    ModelFileParser& operator=(const ModelFileParser&) = delete;
+
+
+    static Mesh createMesh( const std::filesystem::path& modelFilePath );
+
 
 private:
-    void ConstructMeshFromFile( Mesh& mesh );
+    explicit ModelFileParser() = default;
+    static void ConstructMeshFromFile( Mesh& mesh );
 };

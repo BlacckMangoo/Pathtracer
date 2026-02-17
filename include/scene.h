@@ -3,8 +3,6 @@
 #include <primitives.h>
 #include "modelFileParser.h"
 #include <bvh.h>
-#include <objLoader.h>
-
 
 struct SceneData {
     std::vector<Sphere> spheres = {};
@@ -13,9 +11,17 @@ struct SceneData {
 
     SceneData() {
         meshes.reserve(3);
-        Mesh utahTeapotModel{};
-        utahTeapotModel.modelData = ObjLoader("./assets/models/utah_teapot.obj").LoadMesh();
-        utahTeapotModel.BuildNodeBVH();
-        meshes.emplace_back(utahTeapotModel);
+        meshes.emplace_back(ModelFileParser::createMesh("./assets/models/teapot.mdl"));
+        // Ground sphere
+        spheres.emplace_back(15.0f, Vec3<float>(0.0f, -15.0f, 3.0f), Materials::diffuseWhite);
+
+        // Emissive sphere light (simple area light)
+        Material lightMat;
+        lightMat.albedo = {0.0f, 0.0f, 0.0f};
+        lightMat.emission = {15.0f, 40.0f, 15.0f};
+        lightMat.roughness = 1.0f;
+        lightMat.metallic = 0.0f;
+
+        spheres.emplace_back(2.0f, Vec3<float>(0.0f, 8.0f, 0.0f), lightMat);
     }
 };
