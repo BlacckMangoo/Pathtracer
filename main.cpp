@@ -8,11 +8,11 @@
 
 
 
-constexpr int Samples = 2400;
+constexpr int SAMPLES = 1000;
 int main() {
     Profiler profiler ;
 
-    PPMFile ppm("./assets/output.ppm", 255, 1800, 1800);
+    PPMFile ppm("./assets/output.ppm", 255, 1200, 1200);
     Camera camera{ ppm.getWidth(), ppm.getHeight(),3.0f };
 
     // Create scene ONCE before rendering
@@ -22,7 +22,7 @@ int main() {
         for (int x = 0; x < ppm.getWidth(); ++x) {
             Vec3 pixel{camera.getNDCx(x),-camera.getNDCy(y),camera.origin.z - camera.focalLength};
             Color pixelColor ;
-            for ( int i{} ; i < Samples; ++i) {
+            for ( int i{} ; i < SAMPLES; ++i) {
                 Vec3<float> jitter {
                      (RandomFloat() - 0.5f) / static_cast<float>(ppm.getWidth()),
                      (RandomFloat() - 0.5f) / static_cast<float>(ppm.getHeight()),
@@ -32,7 +32,7 @@ int main() {
                  Ray ray{camera.origin,(jitteredPixel - camera.origin).normalized()};
                  pixelColor = pixelColor + pathTrace(ray, scene);
             }
-            pixelColor = pixelColor * (1.0f / static_cast<float>(Samples));
+            pixelColor = pixelColor * (1.0f / static_cast<float>(SAMPLES));
 
             pixelColor = {
                 std::min(pixelColor.r, 1.0f) * 255.0f,
