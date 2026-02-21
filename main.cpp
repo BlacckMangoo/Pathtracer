@@ -8,18 +8,18 @@
 
 
 
-constexpr int SAMPLES = 1000;
+constexpr int SAMPLES = 100;
 int main() {
     Profiler profiler ;
 
-    PPMFile ppm("./assets/output.ppm", 255, 1200, 1200);
+    PPMFile ppm("./assets/output.ppm", 255, 200, 200);
     Camera camera{ ppm.getWidth(), ppm.getHeight(),3.0f };
 
     // Create scene ONCE before rendering
     SceneData scene;
 
-    for (int y = 0; y < ppm.getHeight(); ++y) {
-        for (int x = 0; x < ppm.getWidth(); ++x) {
+    for (int y {}; y < ppm.getHeight(); ++y) {
+        for (int x {}; x < ppm.getWidth(); ++x) {
             Vec3 pixel{camera.getNDCx(x),-camera.getNDCy(y),camera.origin.z - camera.focalLength};
             Color pixelColor ;
             for ( int i{} ; i < SAMPLES; ++i) {

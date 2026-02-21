@@ -53,7 +53,7 @@ inline SceneHitInfo traceScene(const Ray& ray, const SceneData& scene) {
     return result;
 }
 
-Color rayTrace(const Ray& ray, const SceneData& scene, int depth = 0)
+Color rayTrace(const Ray& ray, const SceneData& scene, const int depth = 0)
 {
     if (depth > 3) return Colors::skyBlue;
 
