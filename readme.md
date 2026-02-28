@@ -13,3 +13,26 @@ Progress Through Screen shots
 
 ToDo List
 1. improve BVH struct size and reduce random memory accesses for better cache performance
+
+#Requirements 
+
+CMake ≥ 3.20
+C++ compiler with C++20 support(gcc 11+ or clang 14+)
+Make
+
+#Setup
+
+git clone <repo-url>
+cd PathTracer
+
+mkdir build 
+cd build 
+
+cmake..
+make 
+
+this will produce an executable in build/PathTracer
+
+output image will be written to assets/output.ppm
+
+

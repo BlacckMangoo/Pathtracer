@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore.a CMakeFiles/core.dir/ppm.cpp.o CMakeFiles/core.dir/primitives.cpp.o CMakeFiles/core.dir/tracer.cpp.o CMakeFiles/core.dir/modelFileParser.cpp.o
+/usr/bin/ranlib libcore.a

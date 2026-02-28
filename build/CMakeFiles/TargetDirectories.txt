@@ -1,0 +1,4 @@
+/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles/core.dir
+/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles/PathTracer.dir
+/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles/edit_cache.dir
+/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles/rebuild_cache.dir
