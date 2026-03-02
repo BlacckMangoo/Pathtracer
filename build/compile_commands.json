@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/satvik/Documents/Projects/Pathtracer/build",
+  "command": "/usr/bin/clang++  -I/home/satvik/Documents/Projects/Pathtracer/include -std=gnu++20 -o CMakeFiles/core.dir/ppm.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/ppm.cpp",
+  "file": "/home/satvik/Documents/Projects/Pathtracer/ppm.cpp",
+  "output": "CMakeFiles/core.dir/ppm.cpp.o"
+},
+{
+  "directory": "/home/satvik/Documents/Projects/Pathtracer/build",
+  "command": "/usr/bin/clang++  -I/home/satvik/Documents/Projects/Pathtracer/include -std=gnu++20 -o CMakeFiles/core.dir/primitives.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/primitives.cpp",
+  "file": "/home/satvik/Documents/Projects/Pathtracer/primitives.cpp",
+  "output": "CMakeFiles/core.dir/primitives.cpp.o"
+},
+{
+  "directory": "/home/satvik/Documents/Projects/Pathtracer/build",
+  "command": "/usr/bin/clang++  -I/home/satvik/Documents/Projects/Pathtracer/include -std=gnu++20 -o CMakeFiles/core.dir/tracer.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/tracer.cpp",
+  "file": "/home/satvik/Documents/Projects/Pathtracer/tracer.cpp",
+  "output": "CMakeFiles/core.dir/tracer.cpp.o"
+},
+{
+  "directory": "/home/satvik/Documents/Projects/Pathtracer/build",
+  "command": "/usr/bin/clang++  -I/home/satvik/Documents/Projects/Pathtracer/include -std=gnu++20 -o CMakeFiles/core.dir/modelFileParser.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp",
+  "file": "/home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp",
+  "output": "CMakeFiles/core.dir/modelFileParser.cpp.o"
+},
+{
+  "directory": "/home/satvik/Documents/Projects/Pathtracer/build",
+  "command": "/usr/bin/clang++  -I/home/satvik/Documents/Projects/Pathtracer/include -std=gnu++20 -o CMakeFiles/PathTracer.dir/main.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/main.cpp",
+  "file": "/home/satvik/Documents/Projects/Pathtracer/main.cpp",
+  "output": "CMakeFiles/PathTracer.dir/main.cpp.o"
+}
+]

@@ -6,14 +6,12 @@
 #include <random>
 #include <cmath>
 #include <string>
-
-
+#include <fileDirectoryManager.h>
 
 constexpr int SAMPLES = 100;
 int main() {
     Profiler profiler ;
-
-    PPMFile ppm( std::string(PROJECT_ROOT)+ "/assets/output.ppm", 255, 200, 200);
+    PPMFile ppm(FileDirectoryManager::assetDir() / "output.ppm", 255, 200, 200);
     Camera camera{ ppm.getWidth(), ppm.getHeight(),3.0f };
 
     // Create scene ONCE before rendering

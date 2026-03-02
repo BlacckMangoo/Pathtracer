@@ -73,57 +73,57 @@ CMakeFiles/core.dir/ppm.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/ppm.cpp.o: /home/satvik/Documents/Projects/Pathtracer/ppm.cpp
 CMakeFiles/core.dir/ppm.cpp.o: CMakeFiles/core.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core.dir/ppm.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/ppm.cpp.o -MF CMakeFiles/core.dir/ppm.cpp.o.d -o CMakeFiles/core.dir/ppm.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/ppm.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/ppm.cpp.o -MF CMakeFiles/core.dir/ppm.cpp.o.d -o CMakeFiles/core.dir/ppm.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/ppm.cpp
 
 CMakeFiles/core.dir/ppm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/ppm.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/ppm.cpp > CMakeFiles/core.dir/ppm.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/ppm.cpp > CMakeFiles/core.dir/ppm.cpp.i
 
 CMakeFiles/core.dir/ppm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/ppm.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/ppm.cpp -o CMakeFiles/core.dir/ppm.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/ppm.cpp -o CMakeFiles/core.dir/ppm.cpp.s
 
 CMakeFiles/core.dir/primitives.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/primitives.cpp.o: /home/satvik/Documents/Projects/Pathtracer/primitives.cpp
 CMakeFiles/core.dir/primitives.cpp.o: CMakeFiles/core.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/primitives.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/primitives.cpp.o -MF CMakeFiles/core.dir/primitives.cpp.o.d -o CMakeFiles/core.dir/primitives.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/primitives.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/primitives.cpp.o -MF CMakeFiles/core.dir/primitives.cpp.o.d -o CMakeFiles/core.dir/primitives.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/primitives.cpp
 
 CMakeFiles/core.dir/primitives.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/primitives.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/primitives.cpp > CMakeFiles/core.dir/primitives.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/primitives.cpp > CMakeFiles/core.dir/primitives.cpp.i
 
 CMakeFiles/core.dir/primitives.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/primitives.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/primitives.cpp -o CMakeFiles/core.dir/primitives.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/primitives.cpp -o CMakeFiles/core.dir/primitives.cpp.s
 
 CMakeFiles/core.dir/tracer.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/tracer.cpp.o: /home/satvik/Documents/Projects/Pathtracer/tracer.cpp
 CMakeFiles/core.dir/tracer.cpp.o: CMakeFiles/core.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/tracer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/tracer.cpp.o -MF CMakeFiles/core.dir/tracer.cpp.o.d -o CMakeFiles/core.dir/tracer.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/tracer.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/tracer.cpp.o -MF CMakeFiles/core.dir/tracer.cpp.o.d -o CMakeFiles/core.dir/tracer.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/tracer.cpp
 
 CMakeFiles/core.dir/tracer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/tracer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/tracer.cpp > CMakeFiles/core.dir/tracer.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/tracer.cpp > CMakeFiles/core.dir/tracer.cpp.i
 
 CMakeFiles/core.dir/tracer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/tracer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/tracer.cpp -o CMakeFiles/core.dir/tracer.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/tracer.cpp -o CMakeFiles/core.dir/tracer.cpp.s
 
 CMakeFiles/core.dir/modelFileParser.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/modelFileParser.cpp.o: /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp
 CMakeFiles/core.dir/modelFileParser.cpp.o: CMakeFiles/core.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core.dir/modelFileParser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/modelFileParser.cpp.o -MF CMakeFiles/core.dir/modelFileParser.cpp.o.d -o CMakeFiles/core.dir/modelFileParser.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/modelFileParser.cpp.o -MF CMakeFiles/core.dir/modelFileParser.cpp.o.d -o CMakeFiles/core.dir/modelFileParser.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp
 
 CMakeFiles/core.dir/modelFileParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/modelFileParser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp > CMakeFiles/core.dir/modelFileParser.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp > CMakeFiles/core.dir/modelFileParser.cpp.i
 
 CMakeFiles/core.dir/modelFileParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/modelFileParser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp -o CMakeFiles/core.dir/modelFileParser.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/modelFileParser.cpp -o CMakeFiles/core.dir/modelFileParser.cpp.s
 
 # Object files for target core
 core_OBJECTS = \

@@ -73,15 +73,15 @@ CMakeFiles/PathTracer.dir/main.cpp.o: CMakeFiles/PathTracer.dir/flags.make
 CMakeFiles/PathTracer.dir/main.cpp.o: /home/satvik/Documents/Projects/Pathtracer/main.cpp
 CMakeFiles/PathTracer.dir/main.cpp.o: CMakeFiles/PathTracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satvik/Documents/Projects/Pathtracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PathTracer.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PathTracer.dir/main.cpp.o -MF CMakeFiles/PathTracer.dir/main.cpp.o.d -o CMakeFiles/PathTracer.dir/main.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/main.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PathTracer.dir/main.cpp.o -MF CMakeFiles/PathTracer.dir/main.cpp.o.d -o CMakeFiles/PathTracer.dir/main.cpp.o -c /home/satvik/Documents/Projects/Pathtracer/main.cpp
 
 CMakeFiles/PathTracer.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PathTracer.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/main.cpp > CMakeFiles/PathTracer.dir/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/satvik/Documents/Projects/Pathtracer/main.cpp > CMakeFiles/PathTracer.dir/main.cpp.i
 
 CMakeFiles/PathTracer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PathTracer.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/main.cpp -o CMakeFiles/PathTracer.dir/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/satvik/Documents/Projects/Pathtracer/main.cpp -o CMakeFiles/PathTracer.dir/main.cpp.s
 
 # Object files for target PathTracer
 PathTracer_OBJECTS = \

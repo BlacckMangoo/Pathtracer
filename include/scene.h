@@ -3,6 +3,8 @@
 #include <primitives.h>
 #include "modelFileParser.h"
 #include <bvh.h>
+#include <fileDirectoryManager.h>
+
 
 struct SceneData {
     std::vector<Sphere> spheres = {};
@@ -11,7 +13,7 @@ struct SceneData {
 
     SceneData() {
         meshes.reserve(3);
-        meshes.emplace_back(ModelFileParser::createMesh(std::string(PROJECT_ROOT) +"/assets/models/teapot.mdl"));
+        meshes.emplace_back(ModelFileParser::createMesh(FileDirectoryManager::assetDir() / "models/teapot.mdl"));
         // Ground sphere
         spheres.emplace_back(15.0f, Vec3<float>(0.0f, -15.0f, 3.0f), Materials::diffuseWhite);
 

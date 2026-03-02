@@ -5,6 +5,7 @@
 #include <utility>
 #include <type_traits>
 #include <limits>
+#include <ostream>
 #include <random>
 template<typename T>
 struct Vec3 {
@@ -12,6 +13,7 @@ struct Vec3 {
 
     T x{}, y{}, z{};
 
+    
     // Default and value constructors
     constexpr Vec3() noexcept = default;
 
