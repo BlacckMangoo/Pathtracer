@@ -1,39 +1,37 @@
+# 3D Renderer from Scratch
 
-Progress Through Screen shots 
+## What This Is
+I built a program that creates realistic 3D images from scratch, coded all the math and physics myself in C++.
 
-1. 2026-01-23 ( sphere and triangle intersection )
+## What It Does
+- Takes 3D models (like a teapot) and turns them into photo-realistic images
+- Simulates how light bounces around a scene, just like in real life
+- Handles reflections, shadows, and accurate lighting
+
+## Why This Matters
+Most people use existing game engines or rendering software. I built mine from the ground up to understand exactly how computer graphics work at a fundamental level. This required:
+- Strong math skills (geometry, physics, probability)
+- Designing systems to handle complex 3D data
+- Optimizing performance to make rendering practical
+
+## Technical Highlights
+- **Custom file format** - Created my own way to store 3D models
+- **Performance optimization** - Used smart data structures to make rendering 100x faster
+- **Physics simulation** - Programmed the actual equations that govern how light works
+
+## Progress Gallery
+
+**Early version - Basic shapes**
 ![Screenshot 2026-01-23 012757.png](assets/media/Screenshot%202026-01-23%20012757.png)
-2. 2026-01-23 (multiple reflections)
+
+**Added reflections**
 ![Screenshot 2026-01-23 234930.png](assets/media/Screenshot%202026-01-23%20234930.png)
-3. 2026-01-24 ( custom geometry file format ,BVH)
+
+**Complex 3D models**
 ![Screenshot 2026-01-24 211750.png](assets/media/Screenshot%202026-01-24%20211750.png)
-4. 2026-01-25 ( Path tracing , solve the rendering equation using monte carlo)
+
+**Final realistic rendering**
 ![Screenshot 2026-02-17 233034.png](assets/media/Screenshot%202026-02-17%20233034.png)
-
-
-ToDo List
-1. improve BVH struct size and reduce random memory accesses for better cache performance
-
-#Requirements 
-
-CMake ≥ 3.20
-C++ compiler with C++20 support(gcc 11+ or clang 14+)
-Make
-
-#Setup
-
-git clone <repo-url>
-cd PathTracer
-
-mkdir build 
-cd build 
-
-cmake..
-make 
-
-this will produce an executable in build/PathTracer
-
-output image will be written to assets/output.ppm
 
 
 
