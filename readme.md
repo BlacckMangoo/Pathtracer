@@ -1,18 +1,6 @@
 # 3D Renderer from Scratch
 
-## What This Is
-I built a program that creates realistic 3D images from scratch, coded all the math and physics myself in C++.
 
-## What It Does
-- Takes 3D models (like a teapot) and turns them into photo-realistic images
-- Simulates how light bounces around a scene, just like in real life
-- Handles reflections, shadows, and accurate lighting
-
-## Why This Matters
-Most people use existing game engines or rendering software. I built mine from the ground up to understand exactly how computer graphics work at a fundamental level. This required:
-- Strong math skills (geometry, physics, probability)
-- Designing systems to handle complex 3D data
-- Optimizing performance to make rendering practical
 
 ## Technical Highlights
 - **Custom file format** - Created my own way to store 3D models
